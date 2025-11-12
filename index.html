@@ -1,0 +1,153 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="Enter City Name" spellcheck="false">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="error">
+            <p>Invalid city name</p>
+        </div>
+       <div class="weather">
+        <img src="cloudy.png" class="weather-icon" >
+        <h1 class="temp">22°C</h1>
+        <h2 class="city">New York</h2>
+        <div class="details">
+            <div class="col">
+                <img src="humidity.png"  class="humidity">
+                <div>
+                    <p class="humidity-value">50%</p>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="col">
+                <img src="storm.png" class="wind">
+                <div>
+                    <p class="wind-value">15 km/h</p>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+        </div>
+       </div>
+    </div>
+    <script>
+        const apikey="3a6cf6c1aaa80ed070ea8607177f148d";
+        const apiurl="https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
+         const searchBox=document.querySelector(".search input");
+        const searchBtn=document.querySelector(".search button");
+         const weatherIcon=document.querySelector(".weather-icon");
+
+        async function checkWeather(city){
+        const response=await fetch(apiurl+city+`&appid=${apikey}`);
+        if(response.status== 404){
+            document.querySelector(".error").style.display="block";
+             document.querySelector(".weather").style.display="none";
+           
+        }else{
+         var data=await response.json();
+            
+        document.querySelector(".city").innerHTML=data.name;
+         document.querySelector(".temp").innerHTML=Math.round(data.main.temp)+"°C";
+          document.querySelector(".humidity-value").innerHTML=data.main.humidity+"%";
+           document.querySelector(".wind-value").innerHTML=data.wind.speed+"km/h";
+        
+           if(data.weather[0].main=="Clouds"){
+            weatherIcon.src="cloudy.png";
+           }
+           else if(data.weather[0].main=="Clear"){
+            weatherIcon.src="clear.png";
+           }
+            else if(data.weather[0].main=="Rain"){
+            weatherIcon.src="rain.png";
+           }
+            else if(data.weather[0].main=="Drizzle"){
+            weatherIcon.src="drizzle.png";
+           }
+            else if(data.weather[0].main=="Mist"){
+            weatherIcon.src="mist.png";
+           }
+            else if(data.weather[0].main=="Haze"){
+            weatherIcon.src="haze.png";
+           }
+        
+           document.querySelector(".weather").style.display="block";
+           document.querySelector(".error").style.display="none";
+    }
+}
+
+    searchBtn.addEventListener("click",()=>{
+        checkWeather(searchBox.value);
+    })
+    // checkWeather();
+   
+//         }
+         </script>
+// </body>
+// </html>
+        -->
+   
+
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+        <h1 class="heading">WEATHERNOW</h1>
+    
+  <div class="card">
+    <div class="search">
+      <input type="text" placeholder="Enter City Name" spellcheck="false" />
+      <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+
+    <div class="error"><p>Invalid city name</p></div>
+
+   <div class="weather">
+  <div class="weather-info">
+    <div class="left">
+      <img src="cloudy.png" class="weather-icon" />
+      <h1 class="temp">22°C</h1>
+      <h2 class="city">New York</h2>
+    </div>
+    <div class="right">
+      <div class="col">
+        <img src="humidity.png" />
+        <div>
+          <p class="humidity-value">50%</p>
+          <p>Humidity</p>
+        </div>
+      </div>
+      <div class="col">
+        <img src="storm.png" />
+        <div>
+          <p class="wind-value">15 km/h</p>
+          <p>Wind Speed</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="forecast">
+      <h3>5-Day Forecast</h3>
+      <div class="forecast-cards"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

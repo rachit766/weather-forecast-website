@@ -1,0 +1,243 @@
+ /* *{
+    margin: 0;
+    padding: 0;
+    font-family: "poppins",'sans-sarif';
+    box-sizing: border-box;
+}
+body{
+    background:#222;
+    background-image: url("body.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.card{
+    width: 90%;
+    max-width: 470px;
+    max-height:550px;
+    /* background: linear-gradient(135deg, #00feba, #5b548a); */
+    /* background: rgba(255,255,255,0.1);
+    color:#fff;
+    margin:40px auto 0;
+    border-radius: 20px;
+    padding: 25px 35px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border:1px solid rgba(255,255,255,0.3);
+
+}
+.search{
+    width: 100%;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content:space-between;
+}
+.search input{
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+    padding:10px 25px;
+height: 50px;
+border-radius: 30px;
+flex: 1;
+margin-right: 30px;
+font-size: 18px;
+}
+.search button{
+     border: 0;
+    outline: 0;
+    background: #ebfffc;
+    border-radius: 50%;
+    width:60px;
+    height:50px;
+    cursor: pointer;
+}
+.weather-icon{
+    width:170px;
+    margin-top:30px;
+}
+.weather h1{
+    /* margin-top: 20px; */
+    /* font-size: 50px;
+    font-weight: 500;
+}
+.weather h2{
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+.col img{
+    width:60px;
+    height:60px;
+    margin-right: 10px;
+}
+.humidity-value,.wind-value{
+    font-size: 30px;
+    margin-top: -6px;
+}
+.weather{
+    display:none;
+}
+.error{
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+} */
+ 
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("body.jpg");
+  filter: blur();
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background: #e0f7fa; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+
+.card {
+
+    margin-top: 2px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 400px;
+  text-align: center;
+   background: rgba(255,255,255,0.3);
+   backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border:1px solid rgba(255,255,255,0.3);
+
+}
+
+.search {
+  display: flex;
+  justify-content:space-around;
+  margin-bottom: 20px;
+}
+
+.search input {
+  width: 75%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.search button {
+  padding: 8px;
+  background: #00796b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.error {
+  display: none;
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.weather {
+  text-align: center;
+  display: none;
+
+}
+
+.weather-icon {
+  width: 130px;
+ 
+}
+
+.details {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.col {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.col img {
+  width: 60px;
+}
+
+.forecast {
+  margin-top: 20px;
+  display: none;
+}
+
+.forecast-cards {
+   
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+.forecast-card {
+  background-color: #f0f0f0;
+  padding: 0px;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 100px;
+  flex-shrink: 0;
+}
+
+.forecast-card img {
+  width: 40px;
+  margin: 5px 0;
+}
+.weather-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  margin-left: 30px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  margin-right: 30px;
+}
+.city{
+    font-size: 20px;
+}
+.temp{
+    font-size: 25px;
+}
+.heading{
+    text-align: center;
+}
